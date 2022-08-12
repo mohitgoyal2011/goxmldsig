@@ -1,4 +1,4 @@
-module github.com/russellhaering/goxmldsig
+module github.com/mohitgoyal2011/goxmldsig
 
 go 1.15
 

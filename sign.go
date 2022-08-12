@@ -97,7 +97,6 @@ func (ctx *SigningContext) constructSignedInfo(el *etree.Element, enveloped bool
 		reference.CreateAttr(URIAttr, "#"+dataId)
 	}
 
-
 	// /SignedInfo/Reference/Transforms
 	transforms := ctx.createNamespacedElement(reference, TransformsTag)
 	if enveloped {
@@ -216,7 +215,9 @@ func (ctx *SigningContext) SignEnveloped(el *etree.Element) (*etree.Element, err
 	}
 
 	ret := el.Copy()
-	ret.Child = append(ret.Child, sig)
+	//ret.Child = append(ret.Child, sig)
+
+	ret.AddChild(sig)
 
 	return ret, nil
 }
